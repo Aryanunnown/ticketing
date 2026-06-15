@@ -9,6 +9,7 @@
     "outDir": "./build",
 
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node", "jest"]
   }
 }
