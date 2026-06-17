@@ -15,8 +15,10 @@ function App({ Component, pageProps, currentUser }) {
 
 App.getInitialProps = async (appContext) => {
   const client = buildClient(appContext.ctx);
+  let data = {};
   try {
-    const { data } = await client.get("/api/users/currentuser");
+    const response = await client.get("/api/users/currentuser");
+    data = response.data;
   } catch (error) {
     console.log("URL:", error.config?.url);
     console.log("STATUS:", error.response?.status);
